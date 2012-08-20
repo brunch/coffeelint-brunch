@@ -1,9 +1,12 @@
-## jshint-brunch
-Adds JSHint support to
+## coffeelint-brunch
+Adds coffeelint support to
 [brunch](http://brunch.io).
 
+This project has just started: don't use it.
+
+
 ## Usage
-Add `"jshint-brunch": "x.y.z"` to `package.json` of your brunch app.
+Add `"coffeelint-brunch": "x.y.z"` to `package.json` of your brunch app.
 
 Pick a plugin version that corresponds to your minor (y) brunch version.
 
