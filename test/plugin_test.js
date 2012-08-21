@@ -5,7 +5,7 @@ describe('Plugin', function() {
     plugin = new Plugin({
       paths: {app: 'app'},
       coffeelint: {
-        options: {eqnull: true},
+        options: {no_trailing_semicolons: { level: "ignore"} },
         globals: {stuff: true}
       }
     });
@@ -37,12 +37,12 @@ describe('Plugin', function() {
     });
   });
 
-//   it('should read configs global options list', function(done) {
-//     var content = 'function a() {return stuff == null;}'
-//
-//     plugin.lint(content, 'file.coffee', function(error) {
-//       expect(error).not.to.be.ok;
-//       done();
-//     });
-//   });
+  it('should read configs global options list', function(done) {
+    var content = 'alert("end of line");'
+
+    plugin.lint(content, 'file.coffee', function(error) {
+      expect(error).not.to.be.ok;
+      done();
+    });
+  });
 });
