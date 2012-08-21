@@ -1,12 +1,12 @@
 {
-  "name": "jshint-brunch",
-  "version": "1.4.0",
-  "description": "Adds JSHint support to brunch.",
-  "author": "Paul Miller (http://paulmillr.com/)",
-  "homepage": "https://github.com/brunch/jshint-brunch",
+  "name": "coffeelint-brunch",
+  "version": "0.1.0",
+  "description": "Adds CoffeeLint support to brunch.",
+  "author": "Costantino Giuliodori based on jshint-brunch by Paul Miller (http://paulmillr.com/)",
+  "homepage": "https://github.com/ilkosta/coffeelint-brunch",
   "repository": {
     "type": "git",
-    "url": "git@github.com:brunch/jshint-brunch.git"
+    "url": "git@github.com:ilkosta/coffeelint-brunch.git"
   },
   "main": "./lib/index",
   "scripts": {
@@ -18,10 +18,11 @@
     "node": "~0.6.10 || 0.8 || 0.9"
   },
   "dependencies": {
-    "coffee-script": "1.3.3"
+    "coffee-script": "1.3.3",
+    "coffeelint": ">= 0.4.0"
   },
   "devDependencies": {
-    "mocha": "1.3.2",
-    "chai": "1.2.0"
+    "mocha" : "*",
+    "chai"	: "*"
   }
 }

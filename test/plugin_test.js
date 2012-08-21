@@ -4,7 +4,7 @@ describe('Plugin', function() {
   beforeEach(function() {
     plugin = new Plugin({
       paths: {app: 'app'},
-      jshint: {
+      coffeelint: {
         options: {eqnull: true},
         globals: {stuff: true}
       }
@@ -20,29 +20,29 @@ describe('Plugin', function() {
   });
 
   it('should lint correctly', function(done) {
-    var content = 'var a = 228;'
+    var content = 'a = 228\nb = () ->\n  console.log a'
 
-    plugin.lint(content, 'file.js', function(error) {
+    plugin.lint(content, 'file.coffee', function(error) {
       expect(error).not.to.be.ok;
       done();
     });
   });
 
   it('should give correct errors', function(done) {
-    var content = 'var a = 228;;'
+    var content = 'b = () ->\n\t\t   a=10'
 
-    plugin.lint(content, 'file.js', function(error) {
-      expect(error).to.equal('Unnecessary semicolon. (error) at line 1, column 13');
+    plugin.lint(content, 'file.coffee', function(error) {
+      expect(error).to.equal('error: indentation at line 2.Expected 2 got 5\nerror: no_tabs at line 2.');
       done();
     });
   });
 
-  it('should read configs global options list', function(done) {
-    var content = 'function a() {return stuff == null;}'
-
-    plugin.lint(content, 'file.js', function(error) {
-      expect(error).not.to.be.ok;
-      done();
-    });
-  });
+//   it('should read configs global options list', function(done) {
+//     var content = 'function a() {return stuff == null;}'
+//
+//     plugin.lint(content, 'file.coffee', function(error) {
+//       expect(error).not.to.be.ok;
+//       done();
+//     });
+//   });
 });

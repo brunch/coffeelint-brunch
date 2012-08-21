@@ -1,8 +1,8 @@
 ## coffeelint-brunch
-Adds coffeelint support to
+Adds [coffeelint](http://www.coffeelint.org) support to
 [brunch](http://brunch.io).
 
-This project has just started: don't use it.
+This project has just started: **don't use it**.
 
 
 ## Usage
@@ -11,19 +11,19 @@ Add `"coffeelint-brunch": "x.y.z"` to `package.json` of your brunch app.
 Pick a plugin version that corresponds to your minor (y) brunch version.
 
 If you want to use git version of plugin, add
-`"jshint-brunch": "git+ssh://git@github.com:brunch/jshint-brunch.git"`.
+`"coffeelint-brunch": "git+ssh://git@github.com:ilkosta/coffeelint-brunch.git"`.
 
 By default, only files in your `config.paths.app` are linted.
 
-You can customize jshint config by changing brunch config:
+You can customize jshint config by changing brunch config using the native [coffeelint options](http://www.coffeelint.org/#options):
 
 ```coffeescript
 config =
-  jshint:
-    pattern: /^app\/.*\.js$/
+  coffeelint:
+    pattern: /^app\/.*\.coffee$/
     options:
-      bitwise: true
-      curly: true
+      no_trailing_semicolons:
+        level: "ignore"
     globals:
       jQuery: true
 ```

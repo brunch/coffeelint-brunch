@@ -1,2 +1,2 @@
-# jshint-brunch 1.4.0 (August 20, 2012)
+# coffeelint-brunch 0.1.0 (August 20, 2012)
 * Initial release

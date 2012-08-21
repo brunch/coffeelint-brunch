@@ -1,27 +1,27 @@
-jshint = require('jshint').JSHINT
+linter  = require('coffeelint')
+util    = require 'util'
 
 formatError = (error) ->
-  evidence = (if error.evidence then "\n\n#{error.evidence}\n" else '\n')
-  "#{error.reason} #{error.id or ''} at line #{error.line}, column #{error.character}"
+  evidence = (if error.rule then "\n\n#{error.rule}\n" else "\n")
+  msg ="
+#{error.level}: #{error.rule} at line #{error.lineNumber}.
+#{error.context or ''}"
 
-module.exports = class JSHintLinter
+module.exports = class CoffeeLinter
   brunchPlugin: yes
   type: 'javascript'
-  extension: 'js'
+  extension: 'coffee'
 
   constructor: (@config) ->
-    cfg = @config?.jshint ? {}
+    cfg = @config?.coffeelint ? {}
     @options = cfg.options
     @globals = cfg.globals
-    @pattern = cfg.pattern ? ///^#{@config.paths.app}.*\.js$///
+    @pattern = cfg.pattern ? ///^#{@config.paths.app}.*\.coffee$///
 
   lint: (data, path, callback) ->
-    success = jshint data, @options, @globals
-    if success
-      callback()
-    else
-      error = jshint.errors
+    error = (linter.lint data, @options, @globals)
         .filter((error) -> error?)
         .map(formatError)
         .join('\n')
-      callback error
+    if error then callback error else callback()
+
