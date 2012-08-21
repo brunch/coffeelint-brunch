@@ -2,7 +2,7 @@
 Adds [coffeelint](http://www.coffeelint.org) support to
 [brunch](http://brunch.io).
 
-## Usage
+## Usage <a name="usage" href="#usage" title="Link to this section">⚑</a>
 Add `"coffeelint-brunch": "x.y.z"` to `package.json` of your brunch app.
 
 Pick a plugin version that corresponds to your minor (y) brunch version.
@@ -26,3 +26,8 @@ config =
 ```
 
 Every sub-option (`pattern`, `options`, `globals`) is optional.
+
+## License <a name="license" href="#license" title="Link to this section">⚑</a>
+Copyright (c) 2012 "ilkosta" Costantino Giuliodori
+Licensed under the MIT license.  
+<LICENSE-MIT>
