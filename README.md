@@ -28,6 +28,6 @@ config =
 Every sub-option (`pattern`, `options`, `globals`) is optional.
 
 ## License <a name="license" href="#license" title="Link to this section">⚑</a>
-Copyright (c) 2012 "ilkosta" Costantino Giuliodori
+Copyright (c) 2012 "ilkosta" Costantino Giuliodori.
 Licensed under the MIT license.  
 <LICENSE-MIT>
