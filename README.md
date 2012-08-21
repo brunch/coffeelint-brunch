@@ -2,9 +2,6 @@
 Adds [coffeelint](http://www.coffeelint.org) support to
 [brunch](http://brunch.io).
 
-This project has just started: **don't use it**.
-
-
 ## Usage
 Add `"coffeelint-brunch": "x.y.z"` to `package.json` of your brunch app.
 
