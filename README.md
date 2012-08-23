@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/ilkosta/coffeelint-brunch.png)](http://travis-ci.org/ilkosta/coffeelint-brunch)
 ## coffeelint-brunch
 Adds [coffeelint](http://www.coffeelint.org) support to
 [brunch](http://brunch.io).
