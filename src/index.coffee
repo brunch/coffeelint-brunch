@@ -19,9 +19,11 @@ module.exports = class CoffeeLinter
     @pattern = cfg.pattern ? ///^#{@config.paths.app}.*\.coffee$///
 
   lint: (data, path, callback) ->
-    error = (linter.lint data, @options, @globals)
+    error = try
+      (linter.lint data, @options, @globals)
         .filter((error) -> error?)
         .map(formatError)
         .join('\n')
+    catch err
+      err
     if error then callback error else callback()
-
