@@ -1,6 +1,6 @@
 {
   "name": "coffeelint-brunch",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Adds CoffeeLint support to brunch.",
   "author": "Costantino Giuliodori based on jshint-brunch by Paul Miller (http://paulmillr.com/)",
   "homepage": "https://github.com/ilkosta/coffeelint-brunch",
