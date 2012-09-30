@@ -20,7 +20,21 @@ var execute = function(pathParts, params, callback) {
 if (mode === 'postinstall') {
   fsExists(sysPath.join(__dirname, 'lib'), function(exists) {
     if (exists) return;
-    execute(['node_modules', 'coffee-script', 'bin', 'coffee'], '-o lib/ src/');
+    var modulePath = require.resolve("coffee-script");
+    if( typeof modulePath !== "undefined" && modulePath !== null  && modulePath) {
+      var coffeeCmd = sysPath.join( 
+        sysPath.dirname(modulePath),  
+        "..",
+        "..",
+        "bin",
+        "coffee"
+      ).split(sysPath.sep);
+      coffeeCmd.unshift(sysPath.sep);
+      execute( coffeeCmd , '-o lib/ -c src/');
+    }
+    else {
+      console.log("Module coffee-script absent!");
+    };    
   });
 } else if (mode === 'test') {
   execute(['node_modules', 'mocha', 'bin', 'mocha'],
