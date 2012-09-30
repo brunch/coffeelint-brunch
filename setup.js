@@ -9,7 +9,7 @@ var fsExists = fs.exists || sysPath.exists;
 var execute = function(pathParts, params, callback) {
   if (callback == null) callback = function() {};
   var path = sysPath.join.apply(null, pathParts);
-  var command = 'node ' + path + ' ' + params;
+  var command = 'node "' + path + '" ' + params;
   console.log('Executing', command);
   exec(command, function(error, stdout, stderr) {
     if (error != null) return process.stderr.write(stderr.toString());
@@ -29,7 +29,7 @@ if (mode === 'postinstall') {
         "bin",
         "coffee"
       ).split(sysPath.sep);
-      coffeeCmd.unshift(sysPath.sep);
+      //coffeeCmd.unshift(sysPath.sep);
       execute( coffeeCmd , '-o lib/ -c src/');
     }
     else {
