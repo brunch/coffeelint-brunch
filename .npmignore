@@ -8,5 +8,4 @@ CVS/
 .DS_Store
 .package.json.kate-swp
 node_modules/
-lib/
 npm-debug.log
