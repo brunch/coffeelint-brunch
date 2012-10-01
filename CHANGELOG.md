@@ -1,4 +1,4 @@
-# coffeelint-brunch 1.4.4 (September 30, 2012)
+# coffeelint-brunch 1.4.4 (October 1, 2012)
 * published the compiled file index.js
 
 # coffeelint-brunch 1.4.2 (September 30, 2012)
