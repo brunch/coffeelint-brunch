@@ -1,3 +1,6 @@
+# coffeelint-brunch 1.4.4 (September 30, 2012)
+* published the compiled file index.js
+
 # coffeelint-brunch 1.4.2 (September 30, 2012)
 * added workaround to [a npm issue](https://github.com/ilkosta/coffeelint-brunch/issues/5)
 
@@ -9,4 +12,3 @@
 
 # coffeelint-brunch 0.1.0 (August 20, 2012)
 * Initial release
-

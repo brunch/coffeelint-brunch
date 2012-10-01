@@ -9,7 +9,7 @@ var fsExists = fs.exists || sysPath.exists;
 var execute = function(pathParts, params, callback) {
   if (callback == null) callback = function() {};
   var path = sysPath.join.apply(null, pathParts);
-  var command = 'node "' + path + '" ' + params;
+  var command = 'node ' + path + ' ' + params;
   console.log('Executing', command);
   exec(command, function(error, stdout, stderr) {
     if (error != null) return process.stderr.write(stderr.toString());
@@ -20,21 +20,7 @@ var execute = function(pathParts, params, callback) {
 if (mode === 'postinstall') {
   fsExists(sysPath.join(__dirname, 'lib'), function(exists) {
     if (exists) return;
-    var modulePath = require.resolve("coffee-script");
-    if( typeof modulePath !== "undefined" && modulePath !== null  && modulePath) {
-      var coffeeCmd = sysPath.join( 
-        sysPath.dirname(modulePath),  
-        "..",
-        "..",
-        "bin",
-        "coffee"
-      ).split(sysPath.sep);
-      //coffeeCmd.unshift(sysPath.sep);
-      execute( coffeeCmd , '-o lib/ -c src/');
-    }
-    else {
-      console.log("Module coffee-script absent!");
-    };    
+    execute(['node_modules', 'coffee-script', 'bin', 'coffee'], '-o lib/ src/');
   });
 } else if (mode === 'test') {
   execute(['node_modules', 'mocha', 'bin', 'mocha'],
