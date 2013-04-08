@@ -1,3 +1,6 @@
+# coffeelint-brunch 1.5.0 (April 8, 2013)
+* managed the config.plugins nesting (from es128)
+
 # coffeelint-brunch 1.4.4 (October 1, 2012)
 * published the compiled file index.js
 

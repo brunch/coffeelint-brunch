@@ -1,6 +1,6 @@
 {
   "name": "coffeelint-brunch",
-  "version": "1.4.4",
+  "version": "1.5.0",
   "description": "Adds CoffeeLint support to brunch.",
   "author": "Costantino Giuliodori based on jshint-brunch by Paul Miller (http://paulmillr.com/)",
   "homepage": "https://github.com/ilkosta/coffeelint-brunch",
@@ -10,15 +10,13 @@
   },
   "main": "./lib/index",
   "scripts": {
-    "prepublish": "coffee -o lib/ src/",
-    "postinstall": "node setup.js postinstall",
-    "test": "node setup.js test"
+    "prepublish": "rm -rf lib && coffee --bare --output lib/ src/",
+    "test": "node_modules/.bin/mocha --compilers coffee:coffee-script --require test/common.js"
   },
   "engines": {
     "node": "~0.6.10 || 0.8 || 0.9"
   },
   "dependencies": {
-    "coffee-script": "1.3.3",
     "coffeelint": ">= 0.4.0"
   },
   "devDependencies": {
