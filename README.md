@@ -17,11 +17,12 @@ You can customize jshint config by changing brunch config using the native [coff
 
 ```coffeescript
 config =
-  coffeelint:
-    pattern: /^app\/.*\.coffee$/
-    options:
-      no_trailing_semicolons:
-        level: "ignore"
+  plugins:
+    coffeelint:
+      pattern: /^app\/.*\.coffee$/
+      options:
+        no_trailing_semicolons:
+          level: "ignore"
 ```
 
 Every sub-option (`pattern`, `options`, `globals`) is optional.
