@@ -13,7 +13,11 @@ module.exports = class CoffeeLinter
   extension: 'coffee'
 
   constructor: (@config) ->
-    cfg = @config?.coffeelint ? {}
+    cfg = @config?.plugins?.coffeelint ? @config?.coffeelint ? {}
+    
+    if @config?.coffeelint
+      console.warn "Warning: config.coffeelint is deprecated, move it to config.plugins.coffeelint"
+    
     @options = cfg.options
     @globals = cfg.globals
     @pattern = cfg.pattern ? ///^#{@config.paths.app}.*\.coffee$///
