@@ -19,7 +19,7 @@ module.exports = class CoffeeLinter
       console.warn "Warning: config.coffeelint is deprecated, move it to config.plugins.coffeelint"
 
     @options = cfg.options
-    @pattern = cfg.pattern ? ///^(#{@config.paths.watch.join("|")}).*\.coffee$///
+    @pattern = cfg.pattern ? ///(#{@config.paths?.watched?.join("|") or "app"}).*\.coffee$///
 
   lint: (data, path, callback) ->
     error = try

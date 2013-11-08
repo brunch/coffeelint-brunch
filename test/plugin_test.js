@@ -3,7 +3,6 @@ describe('Plugin', function() {
 
   beforeEach(function() {
     plugin = new Plugin({
-      paths: {watch: ['app']},
       plugins: {
         coffeelint: {
           options: {no_trailing_semicolons: { level: "ignore"} }
