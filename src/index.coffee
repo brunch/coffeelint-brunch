@@ -14,13 +14,13 @@ module.exports = class CoffeeLinter
 
   constructor: (@config) ->
     cfg = @config?.plugins?.coffeelint ? @config?.coffeelint ? {}
-    
+
     if @config?.coffeelint
       console.warn "Warning: config.coffeelint is deprecated, move it to config.plugins.coffeelint"
-    
+
     @options = cfg.options
     @globals = cfg.globals
-    @pattern = cfg.pattern ? ///^#{@config.paths.app}.*\.coffee$///
+    @pattern = cfg.pattern ? ///^#{@config.paths.watch}.*\.coffee$///
 
   lint: (data, path, callback) ->
     error = try
