@@ -3,7 +3,7 @@ util    = require 'util'
 
 formatError = (error) ->
   evidence = (if error.rule then "\n\n#{error.rule}\n" else "\n")
-  msg ="
+  msg = "
 #{error.level}: #{error.rule} at line #{error.lineNumber}.
 #{error.context or ''}"
 
@@ -19,12 +19,11 @@ module.exports = class CoffeeLinter
       console.warn "Warning: config.coffeelint is deprecated, move it to config.plugins.coffeelint"
 
     @options = cfg.options
-    @globals = cfg.globals
-    @pattern = cfg.pattern ? ///^#{@config.paths.watch}.*\.coffee$///
+    @pattern = cfg.pattern ? ///(#{@config.paths?.watched?.join("|") or "app"}).*\.coffee$///
 
   lint: (data, path, callback) ->
     error = try
-      (linter.lint data, @options, @globals)
+      (linter.lint data, @options)
         .filter((error) -> error?)
         .map(formatError)
         .join('\n')
