@@ -1,3 +1,6 @@
+# coffeelint-brunch 1.7.0 (April 15, 2014)
+* Made compatible with brunch 1.7.x
+
 # coffeelint-brunch 1.5.0 (April 8, 2013)
 * managed the config.plugins nesting (from es128)
 
