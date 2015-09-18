@@ -45,4 +45,21 @@ describe('Plugin', function() {
       done();
     });
   });
+
+  it('should read coffeelint.json', function(done) {
+    var content = 'a++'
+
+    plugin = new Plugin({
+      plugins: {
+        coffeelint: {
+          useCoffeelintJson: true
+        }
+      }
+    });
+
+    plugin.lint(content, 'file.coffee', function(error) {
+      expect(error).to.contain('error: no_plusplus at line 1. found \'++\'');
+      done();
+    });
+  });
 });
