@@ -1,3 +1,6 @@
+# coffeelint-brunch 1.7.1 (September 21, 2015)
+* Adds ability to use coffeelint.json
+
 # coffeelint-brunch 1.7.0 (April 15, 2014)
 * Made compatible with brunch 1.7.x
 
