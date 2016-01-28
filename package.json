@@ -6,17 +6,16 @@
     "type": "git",
     "url": "git@github.com:brunch/coffeelint-brunch.git"
   },
-  "main": "./lib/",
+  "main": "./index",
   "scripts": {
-    "prepublish": "rm -rf lib && coffee --bare --output lib/ src/",
-    "test": "node_modules/.bin/mocha --compilers coffee:coffee-script --require test/common.js"
+    "test": "node_modules/.bin/eslint index.js && node_modules/.bin/mocha"
   },
   "dependencies": {
     "coffeelint": ">= 0.4.0"
   },
   "devDependencies": {
     "chai": "*",
-    "coffee-script": "*",
-    "mocha": "*"
+    "mocha": "*",
+    "eslint": "^1.10.3"
   }
 }
