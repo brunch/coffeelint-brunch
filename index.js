@@ -29,9 +29,7 @@ class CoffeeLinter {
     }
   }
 
-  lint(params) {
-    const data = params.data;
-
+  lint(data, _) { //eslint-disable-line no-unused-vars
     try {
       const error = linter.lint(data, this.options).filter(err => err != null).map(formatError).join('\n');
       if (error) return Promise.reject(error);
