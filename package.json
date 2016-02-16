@@ -16,6 +16,6 @@
   "devDependencies": {
     "chai": "*",
     "mocha": "*",
-    "eslint": "^1.10.3"
+    "eslint": "^2.1.0"
   }
 }
