@@ -16,7 +16,7 @@ class CoffeeLinter {
     }
     this.useCoffeelintJson = cfg.useCoffeelintJson;
     const watchedPaths = this.config && this.config.paths && this.config.paths.watched || ['app'];
-    this.pattern = cfg.pattern || new RegExp(`(${watchedPaths.join('|')}).*\\coffee$`);
+    this.pattern = cfg.pattern || new RegExp(`(${watchedPaths.join('|')}).*\.coffee$`);
     if (this.useCoffeelintJson) {
       try {
         const coffeelintJson = JSON.parse(fs.readFileSync('coffeelint.json'));
