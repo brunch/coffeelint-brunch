@@ -3,7 +3,7 @@ Adds [coffeelint](http://www.coffeelint.org) support to
 [brunch](http://brunch.io).
 
 ## Usage <a name="usage" href="#usage" title="Link to this section">⚑</a>
-Install the plugin via npm with `npm install --save coffeelint-brunch`.
+Install the plugin via npm with `npm install --save-dev coffeelint-brunch`.
 
 Or, do manual install:
 
